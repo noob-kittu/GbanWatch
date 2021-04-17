@@ -49,9 +49,9 @@ async def sup(event):
 async def help(event):
     await event.reply(
         """
-This bot is a inline bot, You can use it by typing `@SibylSystemRobot`
+This bot is a inline bot, You can use it by typing `@GbanWatchRobot`
 If a user is gbanned -
-    Getting reason for gban, message the user was gbanned for - `@SibylSystemRobot proof <user_id|proof_id>`
+    Getting reason for gban, message the user was gbanned for - `@GbanWatchRobot proof <user_id|proof_id>`
     """
     )
 
@@ -123,7 +123,7 @@ async def inline_handler(event):
     split = query.split(" ", 1)
     if event.query.user_id not in INSPECTORS:
         result = builder.article(
-            "Sibyl System", text="You don't have access to this cmd."
+            "GbanWatch System", text="You don't have access to this cmd."
         )
         await event.answer([result])
         return

@@ -99,7 +99,7 @@ async def scan(event):
         if event.chat.username
         else f"t.me/c/{event.chat.id}/{event.message.id}"
     )
-    await event.reply("Connecting to Sibyl for a cymatic scan.")
+    await event.reply("Connecting to GbanWatch for a cymatic scan.")
     if req_proof and req_user:
         await replied.forward_to(Sibyl_logs)
         await System.gban(
@@ -136,7 +136,7 @@ async def revive(event):
         return
     a = await event.reply("Reverting bans..")
     await System.ungban(user_id, f" By //{(await event.get_sender()).id}")
-    await a.edit("Revert request sent to sibyl. This might take 10minutes or so.")
+    await a.edit("Revert request sent to GbanWatch. This might take 10minutes or so.")
 
 
 @System.on(system_cmd(pattern=r"logs"))
@@ -266,8 +266,8 @@ help_plus = """
 Here is the help for **Main**:
 
 Commands:
-    `scan` - Reply to a message WITH reason to send a request to Inspectors/Sibyl for judgement
-    `approve` - Approve a scan request (Only works in Sibyl System Base)
+    `scan` - Reply to a message WITH reason to send a request to Inspectors/GbanWatch for judgement
+    `approve` - Approve a scan request (Only works in GbanWatch System Base)
     `revert` or `revive` or `restore` - Ungban ID
     `qproof` - Get quick proof from database for given user id
     `proof` - Get message from proof id which is at the end of gban msg
