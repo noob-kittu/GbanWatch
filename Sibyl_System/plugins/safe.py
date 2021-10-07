@@ -4,7 +4,7 @@ import sys
 import subprocess
 
 
-@System.on(system_cmd(pattern=r"GbanWatch gitpull"))
+@System.on(system_cmd(pattern=r"GbanWatch Gitpull"))
 async def gitpull(event):
     subprocess.Popen("git pull", stdout=subprocess.PIPE, shell=True)
     await event.reply("Git pulled probably.")
@@ -12,7 +12,7 @@ async def gitpull(event):
     os.execv("start.bat", sys.argv)
 
 
-@System.on(system_cmd(pattern=r"GbanWatch restart"))
+@System.on(system_cmd(pattern=r"GbanWatch Restart"))
 async def reboot(event):
     if event.fwd_from:
         return
@@ -22,7 +22,7 @@ async def reboot(event):
     quit()
 
 
-@System.on(system_cmd(pattern=r"GbanWatch shutdown"))
+@System.on(system_cmd(pattern=r"GbanWatch Shutdown"))
 async def shutdown(event):
     if event.fwd_from:
         return
