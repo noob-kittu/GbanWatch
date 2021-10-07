@@ -155,7 +155,7 @@ async def get(event):
 __plugin_name__ = "blacklist"
 
 help_plus = """
-Here is help for **String Blacklist**
+**Here is help for GbanWatch String Blacklist**
 `/addbl` - **Add trigger to blacklist**
 `/rmbl` - **remove trigger from blacklist**
 `/listbl` - **list blacklisted words**
