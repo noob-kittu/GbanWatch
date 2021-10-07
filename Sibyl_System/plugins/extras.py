@@ -45,7 +45,7 @@ async def addenf(event) -> None:
                 "I haven't interacted with that user! Meh, Will add them anyway"
             )
     if u_id in ENFORCERS:
-        await System.send_message(event.chat_id, "That person is already Enforcer!")
+        await System.send_message(event.chat_id, "That person is already Enforcer in GbanWatch!")
         return
     if HEROKU:
         config["ENFORCERS"] = os.environ.get("ENFORCERS") + " " + str(u_id)
@@ -139,7 +139,7 @@ async def join(event) -> None:
         )
     else:
         await System(JoinChannelRequest(link))
-        await System.send_message(event.chat_id, "Joined chat!")
+        await System.send_message(event.chat_id, "GbanWatch System Joined the chat Successfully!")
         await System.send_message(
             Sibyl_logs,
             f"{(await event.get_sender()).first_name} made GbanWatch join {link}",
@@ -172,7 +172,7 @@ async def addins(event) -> None:
         data["INSPECTORS"].append(u_id)
         with open(json_file, "w") as file:
             json.dump(data, file, indent=4)
-        await System.send_message(event.chat_id, "Added to Inspectors, Restarting...")
+        await System.send_message(event.chat_id, "Added to Inspectors in GbanWatch, Restarting...")
         await add_inspector(event.sender_id, u_id)
         await System.disconnect()
         os.execl(sys.executable, sys.executable, *sys.argv)
