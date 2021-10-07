@@ -55,7 +55,7 @@ async def scan(event):
         if message.sender_id in ENFORCERS:
             return
         msg = await System.send_message(
-            Sibyl_logs,
+            GbanWatcg_log,
             scan_request_string.format(
                 enforcer=executor,
                 spammer=message.sender_id,
@@ -92,22 +92,22 @@ async def scan(event):
     else:
         approve = False
     if replied.media:
-        await replied.forward_to(Sibyl_logs)
+        await replied.forward_to(GbanWatch_log)
     executor = f"[{executer.first_name}](tg://user?id={executer.id})"
     chat = (
         f"t.me/{event.chat.username}/{event.message.id}"
         if event.chat.username
         else f"t.me/c/{event.chat.id}/{event.message.id}"
     )
-    await event.reply("Connecting to GbanWatch for a cymatic scan.")
+    await event.reply("Connecting to GbanWatch for a Cymatic scan.")
     if req_proof and req_user:
-        await replied.forward_to(Sibyl_logs)
+        await replied.forward_to(GbanWatch_log)
         await System.gban(
             executer.id, req_user, reason, msg.id, executer, message=replied.text
         )
     if not approve:
         msg = await System.send_message(
-            Sibyl_logs,
+            GbanWatch_log,
             scan_request_string.format(
                 enforcer=executor,
                 spammer=sender,
@@ -118,7 +118,7 @@ async def scan(event):
         )
         return
     msg = await System.send_message(
-        Sibyl_logs,
+        GbanWatch_log,
         forced_scan_string.format(
             ins=executor, spammer=sender, chat=chat, message=replied.text, reason=reason
         ),
@@ -243,7 +243,7 @@ async def reject(event):
         if match:
             # print('Matched OmU')
             id = replied.id
-            await System.edit_message(Sibyl_logs, id, reject_string)
+            await System.edit_message(GbanWatch_log, id, reject_string)
     orig = re.search(r"t.me/(\w+)/(\d+)", replied.text)
     _orig = re.search(r"t.me/c/(\w+)/(\d+)", replied.text)
     flags, reason = seprate_flags(event.text)
