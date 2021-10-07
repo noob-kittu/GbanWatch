@@ -1,5 +1,5 @@
 
-help_plus = """ Here is Help for **GbanWatch Bancodes** :-
+help_plus = """ HERE IS HELP FOR **GbanWatch Bancodes** :-
 **❂** `{SRx00}` **SCAMMER.**
 **❂** `{SRx01}` **SPAM**
 **❂** `{SRx02}` **TOXIC ABUSE SPAM.**
